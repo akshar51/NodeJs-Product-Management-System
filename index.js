@@ -9,6 +9,8 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static('public'))
 
 
+app.use('/',require('./routers/index.routes'))
+
 app.listen(port,(err)=>{
     if(!err){
         db()
