@@ -40,7 +40,7 @@
                             <div class="card-body">
                                 <h5 class="card-title m-b-0">Static Table</h5>
                             </div>
-                            <table class="table  overflow-auto">
+                            <table class="table table-striped table-bordered align-middle text-center">
                                   <thead>
                                     <tr>
                                       <th scope="col">#</th>
@@ -60,7 +60,7 @@
                                   </thead>
                                   <tbody>
                                     <% product.forEach((val,idx)=>{ 
-                                      let {name,price,discount,brand,modelNumber,stock,batchNumber,manufacturer,dimensions,warranty,shippingInfo} = val
+                                      let {id,name,price,discount,brand,modelNumber,stock,batchNumber,manufacturer,dimensions,warranty,shippingInfo} = val
                                     %>
                                     <tr>
                                       <td><%= idx+1 %></td>
@@ -76,8 +76,8 @@
                                       <td><%= warranty %></td>
                                       <td><%= shippingInfo %></td>
                                       <td>
-                                        <a href="" class="btn btn-warning me-1">Edit</a>
-                                        <a href="" class="btn btn-danger">Delete</a>
+                                        <a href="/edit/<%= id %>" class="btn btn-warning me-1">Edit</a>
+                                        <a href="/delete/<%= id %>" class="btn btn-danger">Delete</a>
                                       </td>
                                     </tr>
                                       <% }) %> 

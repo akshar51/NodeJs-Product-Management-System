@@ -19,3 +19,14 @@ module.exports.addProduct = async (req,res)=>{
         res.redirect(req.get('Referrer')||'/')
     }
 }
+
+module.exports.delete = async (req,res)=>{
+    try {
+        let {id} = req.params
+        await Product.findByIdAndDelete(id)
+        res.redirect(req.get('Referrer')||'/')
+    } catch (error) {
+        console.log(error.message)
+        res.redirect(req.get('Referrer')||'/')
+    }
+}

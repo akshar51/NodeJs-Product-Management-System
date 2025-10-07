@@ -13,6 +13,7 @@ router.get('/register',authCtl.registerPage)
 // Product
 router.get('/addProduct',pdtCtl.addProductPage)
 router.get('/table',pdtCtl.tablePage)
+router.get('/delete/:id',pdtCtl.delete)
 
 router.post('/addProduct',pdtCtl.addProduct)
 
