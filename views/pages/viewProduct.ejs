@@ -40,34 +40,47 @@
                             <div class="card-body">
                                 <h5 class="card-title m-b-0">Static Table</h5>
                             </div>
-                            <table class="table">
+                            <table class="table  overflow-auto">
                                   <thead>
                                     <tr>
                                       <th scope="col">#</th>
-                                      <th scope="col">First</th>
-                                      <th scope="col">Last</th>
-                                      <th scope="col">Handle</th>
+                                      <th scope="col">Name</th>
+                                      <th scope="col">Price</th>
+                                      <th scope="col">Discount</th>
+                                      <th scope="col">Brand</th>
+                                      <th scope="col">Model Number</th>
+                                      <th scope="col">Stock</th>
+                                      <th scope="col">Batch Number</th>
+                                      <th scope="col">Manufacturer</th>
+                                      <th scope="col">Dimension</th>
+                                      <th scope="col">Warranty</th>
+                                      <th scope="col">Shipping Info</th>
+                                      <th scope="col">Action</th>
                                     </tr>
                                   </thead>
                                   <tbody>
+                                    <% product.forEach((val,idx)=>{ 
+                                      let {name,price,discount,brand,modelNumber,stock,batchNumber,manufacturer,dimensions,warranty,shippingInfo} = val
+                                    %>
                                     <tr>
-                                      <th scope="row">1</th>
-                                      <td>Mark</td>
-                                      <td>Otto</td>
-                                      <td>@mdo</td>
+                                      <td><%= idx+1 %></td>
+                                      <td><%= name %></td>
+                                      <td><%= price %></td>
+                                      <td><%= discount %></td>
+                                      <td><%= brand %></td>
+                                      <td><%= modelNumber %></td>
+                                      <td><%= stock %></td>
+                                      <td><%= batchNumber %></td>
+                                      <td><%= manufacturer %></td>
+                                      <td><%= dimensions %></td>
+                                      <td><%= warranty %></td>
+                                      <td><%= shippingInfo %></td>
+                                      <td>
+                                        <a href="" class="btn btn-warning me-1">Edit</a>
+                                        <a href="" class="btn btn-danger">Delete</a>
+                                      </td>
                                     </tr>
-                                    <tr>
-                                      <th scope="row">2</th>
-                                      <td>Jacob</td>
-                                      <td>Thornton</td>
-                                      <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">3</th>
-                                      <td>Larry</td>
-                                      <td>the Bird</td>
-                                      <td>@twitter</td>
-                                    </tr>
+                                      <% }) %> 
                                   </tbody>
                             </table>
                         </div>
