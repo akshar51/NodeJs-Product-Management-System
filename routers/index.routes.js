@@ -19,8 +19,9 @@ router.post('/login',passport.authenticate('local',{successRedirect : '/',failur
 router.get('/addProduct',pdtCtl.addProductPage)
 router.get('/table',pdtCtl.tablePage)
 router.get('/delete/:id',pdtCtl.delete)
+router.get('/edit/:id',pdtCtl.editPage)
 
 router.post('/addProduct',pdtCtl.addProduct)
-
+router.post('/update/:id',pdtCtl.update)
 
 module.exports = router
