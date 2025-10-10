@@ -31,7 +31,6 @@ module.exports.delete = async (req, res) => {
       let imagePath = path.join(__dirname, "..", product.images[0]);
       if (fs.existsSync(imagePath)) {
         fs.unlinkSync(imagePath);
-        console.log("✅ Image deleted:", imagePath);
       }
     }
 
