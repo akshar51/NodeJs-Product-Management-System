@@ -3,6 +3,7 @@ const dashboardCtl = require('../controller/dashboardController')
 const authCtl = require('../controller/authController')
 const pdtCtl = require('../controller/productController');
 const passport = require("passport");
+const image = require("../middleware/imageUpload");
 const router = Router()
 
 router.get('/',passport.userAuth,dashboardCtl.homePage)
@@ -21,7 +22,7 @@ router.get('/table',pdtCtl.tablePage)
 router.get('/delete/:id',pdtCtl.delete)
 router.get('/edit/:id',pdtCtl.editPage)
 
-router.post('/addProduct',pdtCtl.addProduct)
+router.post('/addProduct',image,pdtCtl.addProduct)
 router.post('/update/:id',pdtCtl.update)
 
 module.exports = router

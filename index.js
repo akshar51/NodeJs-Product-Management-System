@@ -4,12 +4,15 @@ const db = require('./configs/db');
 const LocalStrategy = require('./middleware/passport')
 const session = require('express-session')
 const passport = require('passport')
+const path = require('path')
 const port = 3000;
 const app = express()
 
 app.set('view engine','ejs')
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static('public'))
+
+app.use('/uploads',express.static(path.join(__dirname+'/uploads')))
 
 app.use(session({
     secret:'user',
